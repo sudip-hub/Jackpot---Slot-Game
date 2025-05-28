@@ -14,8 +14,33 @@ var winningMultiplier = 0
 func _ready():
 	$Result.visible = false
 	SigBank.rollFinished.connect(Callable(self,"_receiveNumber"))
+	
+	var spin_btn = custom_button.new()
+	spin_btn.initialize($Spin, $Spin/TextureRect)
+	spin_btn.connect("btn_pressed", _on_spin_pressed)
+	
+	var inc_bet_btn = custom_button.new()
+	inc_bet_btn.initialize($Increase, $Increase/TextureRect)
+	inc_bet_btn.connect("btn_pressed", _on_increase_bet_pressed)
+	
+	var dec_bet_btn = custom_button.new()
+	dec_bet_btn.initialize($Decrease, $Decrease/TextureRect)
+	dec_bet_btn.connect("btn_pressed", _on_decrease_bet_pressed)
 	pass # Replace with function body.
 
+func _on_increase_bet_pressed():
+	var bet_value = int($HBoxContainerBet/Bet.text)
+	var credit = int($HBoxContainerCredit/Credit.text)
+	if credit >= bet_value + 10:
+		$HBoxContainerBet/Bet.text = str(int($HBoxContainerBet/Bet.text) + 10)
+	pass
+	
+func _on_decrease_bet_pressed():
+	var bet_value = int($HBoxContainerBet/Bet.text)
+	if bet_value > 10:
+		$HBoxContainerBet/Bet.text = str(int($HBoxContainerBet/Bet.text) - 10)
+	pass
+	
 func _receiveNumber(reelID,rngResult):
 	receivedHowManyTimes +=1
 	match reelID:
@@ -33,6 +58,10 @@ func _receiveNumber(reelID,rngResult):
 		_calculateWinning()
 
 func _calculateWinning():
+	$Spin.disabled = false
+	$Increase.disabled = false
+	$Decrease.disabled = false
+	
 	betValue = int($HBoxContainerBet/Bet.text)
 	
 	$Result.visible = true
@@ -59,4 +88,8 @@ func _on_spin_pressed() -> void:
 	SigBank.startRoll.emit(1,2, 0.4)
 	SigBank.startRoll.emit(2,2.5, 0.6)
 	SigBank.startRoll.emit(3,3, 0.2)
+	
+	$Spin.disabled = true
+	$Increase.disabled = true
+	$Decrease.disabled = true
 	pass # Replace with function body.

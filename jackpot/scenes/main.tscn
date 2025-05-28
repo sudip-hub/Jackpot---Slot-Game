@@ -87,17 +87,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(326, 909)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_o5qli")
-region_enabled = true
-region_rect = Rect2(0, 1707.55, 1360, 340.45)
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(114, 274)
-
 [node name="Spin" type="Button" parent="."]
 custom_minimum_size = Vector2(192, 192)
 layout_mode = 1
@@ -130,6 +119,7 @@ offset_right = 96.0
 offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(96, 96)
 texture = ExtResource("5_o6xl0")
 expand_mode = 1
 
@@ -157,6 +147,7 @@ offset_right = 48.0
 offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(48, 48)
 texture = ExtResource("3_sugp2")
 expand_mode = 1
 
@@ -184,6 +175,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(48, 48)
 texture = ExtResource("4_jyhfs")
 expand_mode = 1
 
@@ -260,5 +252,3 @@ theme_override_colors/font_color = Color(0, 0.833333, 1, 1)
 theme_override_fonts/font = ExtResource("6_tefeu")
 theme_override_font_sizes/font_size = 166
 text = "X2"
-
-[connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]
