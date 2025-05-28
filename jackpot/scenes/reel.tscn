@@ -1,0 +1,164 @@
+[gd_scene load_steps=3 format=3 uid="uid://dun7g3ih4vmeq"]
+
+[ext_resource type="Script" uid="uid://bgjtfmna0jm8c" path="res://scenes/reel.gd" id="1_rjasv"]
+[ext_resource type="Texture2D" uid="uid://blxcquwhm76ow" path="res://assets/Slot Spritesheet.png" id="2_anvlj"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rjasv")
+
+[node name="reel1" type="Node2D" parent="."]
+position = Vector2(0, -1250)
+
+[node name="Watermelon2" type="Sprite2D" parent="reel1"]
+position = Vector2(0, -125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(194.605, 540.33, 250, 250)
+
+[node name="Apple" type="Sprite2D" parent="reel1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(92.774, 53.2, 250, 250)
+
+[node name="Grape" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(348.965, 51.405, 250, 250)
+
+[node name="Banana" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(594.245, 302.33, 250, 250)
+
+[node name="Strawberry" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 375)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(1645.25, 52.02, 250, 250)
+
+[node name="Orange" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(1132.31, 295.11, 250, 250)
+
+[node name="Diamond" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 625)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(455.045, 530.76, 250, 250)
+
+[node name="Bar" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(721.035, 536.5, 250, 250)
+
+[node name="Coins" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 875)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(1263.19, 540.11, 250, 250)
+
+[node name="SevenSevenSeven" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 1000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(989.695, 537.495, 250, 250)
+
+[node name="Watermelon" type="Sprite2D" parent="reel1"]
+position = Vector2(0, 1125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(194.605, 540.33, 250, 250)
+
+[node name="reel2" type="Node2D" parent="."]
+
+[node name="Watermelon2" type="Sprite2D" parent="reel2"]
+position = Vector2(0, -125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(194.605, 540.33, 250, 250)
+
+[node name="Apple" type="Sprite2D" parent="reel2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(92.774, 53.2, 250, 250)
+
+[node name="Grape" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(348.965, 51.405, 250, 250)
+
+[node name="Banana" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(594.245, 302.33, 250, 250)
+
+[node name="Strawberry" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 375)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(1645.25, 52.02, 250, 250)
+
+[node name="Orange" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(1132.31, 295.11, 250, 250)
+
+[node name="Diamond" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 625)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(455.045, 530.76, 250, 250)
+
+[node name="Bar" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(721.035, 536.5, 250, 250)
+
+[node name="Coins" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 875)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(1263.19, 540.11, 250, 250)
+
+[node name="SevenSevenSeven" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 1000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(989.695, 537.495, 250, 250)
+
+[node name="Watermelon" type="Sprite2D" parent="reel2"]
+position = Vector2(0, 1125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_anvlj")
+region_enabled = true
+region_rect = Rect2(194.605, 540.33, 250, 250)
