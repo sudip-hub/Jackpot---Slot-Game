@@ -51,8 +51,8 @@ var gradual_roll = 15
 func _startRoll(reelNumber,dur, rollback_dur):
 	if reelNumber!= reelID : return
 	
-	reel1.position.y = -1250
-	reel2.position.y = 0
+	#reel1.position.y = -1250
+	#reel2.position.y = 0
 	state = ROLLBACK
 	rollDuration = dur
 	print(reelID,reelNumber,dur)

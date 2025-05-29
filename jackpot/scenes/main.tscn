@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq1p7otxft8le"]
+[gd_scene load_steps=12 format=3 uid="uid://cq1p7otxft8le"]
 
 [ext_resource type="Texture2D" uid="uid://d233kjovberfs" path="res://assets/Jackpot.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://chrt0no3q2djo" path="res://scenes/main.gd" id="1_tipki"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dv8ga7ran2vok" path="res://assets/minus.png" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://u4e1bglfvsn7" path="res://assets/spin.png" id="5_o6xl0"]
 [ext_resource type="FontFile" uid="uid://dfe1rtvppuxw7" path="res://assets/WendyOne-Regular.ttf" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://hwvvrf5knmf6" path="res://assets/game_info.png" id="8_85g3d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -179,6 +180,36 @@ pivot_offset = Vector2(48, 48)
 texture = ExtResource("4_jyhfs")
 expand_mode = 1
 
+[node name="GameInfo" type="Button" parent="."]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_bottom = 96.0
+grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tipki")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="GameInfo"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(48, 48)
+texture = ExtResource("8_85g3d")
+expand_mode = 1
+
 [node name="HBoxContainerCredit" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
@@ -204,7 +235,7 @@ text = "CREDIT"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_tefeu")
 theme_override_font_sizes/font_size = 31
-text = "$1000"
+text = "20"
 
 [node name="HBoxContainerBet" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -251,4 +282,24 @@ pivot_offset = Vector2(102, 88)
 theme_override_colors/font_color = Color(0, 0.833333, 1, 1)
 theme_override_fonts/font = ExtResource("6_tefeu")
 theme_override_font_sizes/font_size = 166
+text = "X2"
+
+[node name="LabelInfo" type="Label" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -88.0
+offset_right = 102.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(102, 88)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tefeu")
+theme_override_font_sizes/font_size = 60
 text = "X2"

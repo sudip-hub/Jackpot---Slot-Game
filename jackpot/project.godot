@@ -23,7 +23,6 @@ SigBank="*res://scenes/Signal.gd"
 
 window/size/viewport_width=648
 window/size/viewport_height=1152
-window/size/window_width_override=324
 window/size/window_height_override=576
 window/stretch/mode="viewport"
 window/handheld/orientation=1

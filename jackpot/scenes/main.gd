@@ -10,9 +10,12 @@ var betValue
 var betResult
 var winningMultiplier = 0
 
+@onready var game_info = preload("res://scenes/game_info.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Result.visible = false
+	$LabelInfo.visible = false
 	SigBank.rollFinished.connect(Callable(self,"_receiveNumber"))
 	
 	var spin_btn = custom_button.new()
@@ -26,8 +29,16 @@ func _ready():
 	var dec_bet_btn = custom_button.new()
 	dec_bet_btn.initialize($Decrease, $Decrease/TextureRect)
 	dec_bet_btn.connect("btn_pressed", _on_decrease_bet_pressed)
+	
+	var game_info_btn = custom_button.new()
+	game_info_btn.initialize($GameInfo, $GameInfo/TextureRect)
+	game_info_btn.connect("btn_pressed", _on_info_btn_pressed)
 	pass # Replace with function body.
 
+func _on_info_btn_pressed() -> void:
+	var game_info_scene = game_info.instantiate()
+	add_child(game_info_scene)
+	
 func _on_increase_bet_pressed():
 	var bet_value = int($HBoxContainerBet/Bet.text)
 	var credit = int($HBoxContainerCredit/Credit.text)
@@ -85,9 +96,17 @@ func _calculateWinning():
 	
 	
 func _on_spin_pressed() -> void:
-	SigBank.startRoll.emit(1,2, 0.4)
-	SigBank.startRoll.emit(2,2.5, 0.6)
-	SigBank.startRoll.emit(3,3, 0.2)
+	var bet_value = int($HBoxContainerBet/Bet.text)
+	var credit = int($HBoxContainerCredit/Credit.text)
+	if bet_value <= credit:
+		SigBank.startRoll.emit(1,2, 0.4)
+		SigBank.startRoll.emit(2,2.5, 0.6)
+		SigBank.startRoll.emit(3,3, 0.2)
+	else:
+		$LabelInfo.visible = true
+		$LabelInfo.text = "There is no money!"
+		
+		print("There is no money!")
 	
 	$Spin.disabled = true
 	$Increase.disabled = true
